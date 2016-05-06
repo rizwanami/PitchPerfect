@@ -39,25 +39,35 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xOS-F8-lCv">
-                                <rect key="frame" x="165" y="148" width="240" height="293"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="TextField1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-6u-Ztl">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="TextField1" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="TopText" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-6u-Ztl">
                                 <rect key="frame" x="231" y="76" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UZm-36-Bol"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gyU-IH-C1c"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="TextField2" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-WH-7ai">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="TextField2" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="BottomText" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-WH-7ai">
                                 <rect key="frame" x="231" y="458" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2cf-Iw-6us"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eN5-Cx-VcS"/>
+                                </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xOS-F8-lCv">
+                                <rect key="frame" x="165" y="148" width="200" height="293"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -85,9 +95,10 @@
                     </view>
                     <connections>
                         <outlet property="ImagePickerView" destination="xOS-F8-lCv" id="WZz-Wf-TUp"/>
-                        <outlet property="TextField1" destination="8bC-Xf-vdC" id="PFn-Io-GG8"/>
-                        <outlet property="TextField2" destination="8bC-Xf-vdC" id="sCd-rV-20p"/>
+                        <outlet property="bottomText" destination="EwV-WH-7ai" id="p3Q-Ll-MsO"/>
                         <outlet property="cameraButton" destination="aVE-fG-mLu" id="fH8-uq-G4j"/>
+                        <outlet property="topText" destination="3ia-6u-Ztl" id="OHZ-q7-O1a"/>
+                        <outlet property="topToolBar" destination="8WF-bZ-wAM" id="ecZ-eY-LkB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
