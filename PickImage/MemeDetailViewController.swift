@@ -13,13 +13,19 @@ class MemeDetailViewController : UIViewController {
     
     @IBOutlet var memeImage: UIImageView!
     var meme : MemeMeObject!
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//    }
+   override func viewDidLoad() {
+       super.viewDidLoad()    }
     override func viewWillAppear(animated: Bool) {
-        viewWillAppear(animated)
+       super.viewWillAppear(animated)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "selectEditController")
        self.memeImage!.image = meme.memedImage
         
     }
 
+    
+   func edit() {
+       let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+      controller.memedImage = meme.memedImage
+    presentViewController(controller, animated: true, completion: nil)
+    }
 }

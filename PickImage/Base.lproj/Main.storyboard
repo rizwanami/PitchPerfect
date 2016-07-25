@@ -24,11 +24,11 @@
             </objects>
             <point key="canvasLocation" x="-991" y="-586"/>
         </scene>
-        <!--Item-->
+        <!--TableView-->
         <scene sceneID="Nhq-lB-QDd">
             <objects>
                 <navigationController id="y34-fc-OAw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gAu-Tv-23s"/>
+                    <tabBarItem key="tabBarItem" title="TableView" id="gAu-Tv-23s"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SSE-X2-TYi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -45,18 +45,19 @@
         <scene sceneID="6SQ-Eh-7Jh">
             <objects>
                 <tableViewController id="7sP-lO-2DI" customClass="MemeTableViewController" customModule="PickImage" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oof-ed-6ZW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="oof-ed-6ZW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableViewCell" id="iZH-Zw-o5X">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="100" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableViewCell" rowHeight="100" id="iZH-Zw-o5X">
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iZH-Zw-o5X" id="076-eI-1Rf">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -76,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="385" y="-747"/>
         </scene>
-        <!--Meme Detail View Controller-->
+        <!--MemeDetailViewController-->
         <scene sceneID="BPz-0e-B9h">
             <objects>
-                <viewController id="zTF-Y8-Rxl" customClass="MemeDetailViewController" customModule="PickImage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" title="MemeDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zTF-Y8-Rxl" customClass="MemeDetailViewController" customModule="PickImage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rmP-ke-VeE"/>
                         <viewControllerLayoutGuide type="bottom" id="ytA-Mm-k24"/>
@@ -88,8 +89,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H1S-NC-DDm">
-                                <rect key="frame" x="50" y="100" width="396" height="400"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H1S-NC-DDm">
+                                <rect key="frame" x="24" y="30" width="556" height="518"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,6 +101,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="H1S-NC-DDm" secondAttribute="trailing" constant="134" id="pDZ-JJ-gxC"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="memeImage" destination="H1S-NC-DDm" id="1Ve-7Y-Ht8"/>
                     </connections>
@@ -108,11 +111,11 @@
             </objects>
             <point key="canvasLocation" x="1861" y="-836"/>
         </scene>
-        <!--Item-->
+        <!--CollectionView-->
         <scene sceneID="KfU-Vm-VdJ">
             <objects>
                 <navigationController id="NAO-7f-nuY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="saJ-OG-m1S"/>
+                    <tabBarItem key="tabBarItem" title="CollectionView" id="saJ-OG-m1S"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FYE-Re-AIB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -146,8 +149,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="109" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4t-cl-z0M">
-                                            <rect key="frame" x="8" y="8" width="101" height="128"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s4t-cl-z0M">
+                                            <rect key="frame" x="9" y="9" width="91" height="91"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -306,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1067" y="-548"/>
+            <point key="canvasLocation" x="1226" y="-780"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

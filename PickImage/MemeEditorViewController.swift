@@ -120,7 +120,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     func save() {
-        let meme = MemeMeObject(top: self.topText.text!, bottom: self.bottomText.text!, image: self.ImagePickerView.image, memedImage:self.memedImage)
+        let meme = MemeMeObject(top: self.topText.text!, bottom: self.bottomText.text!, image: self.ImagePickerView.image, memedImage: generateMemeImage())
        
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
