@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class MemeTableViewController : UITableViewController {
     var memes: [MemeMeObject]
+        
     {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
@@ -39,6 +40,9 @@ class MemeTableViewController : UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let controller = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         controller.meme = memes[indexPath.row]
+               
+        
+        
                self.navigationController!.pushViewController(controller, animated: true)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

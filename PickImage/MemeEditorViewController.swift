@@ -44,12 +44,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         topText.textAlignment = NSTextAlignment.Center
         bottomText.textAlignment = NSTextAlignment.Center
         shareButton.enabled = false
+       
         if memes != nil {
             sendEntireMeme(memes)
         }
         
+        
+
     
     }
+    
     
     
     override func viewWillAppear(animated: Bool) {
@@ -59,7 +63,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         subscribeToKeyboardNotifications()
         keyboardDidDisapper()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        if memes != nil {
+            sendEntireMeme(memes)
+        }
         
+        
+
         
     }
     override func viewWillDisappear(animated: Bool) {
@@ -124,6 +133,15 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func keyboardDidDisapper() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
+    func save() {
+        let meme = MemeMeObject(top: self.topText.text!, bottom: self.bottomText.text!, image: self.ImagePickerView.image, memedImage:generateMemeImage())
+       
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+
+        
+    }
     
     func generateMemeImage()->UIImage {
         
@@ -164,25 +182,14 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
          dismissViewControllerAnimated(true, completion: nil)
         
     }
-    
-    func save() {
-        let meme = MemeMeObject(top: self.topText.text!, bottom: self.bottomText.text!, image: self.ImagePickerView.image, memedImage: generateMemeImage())
-        
-        let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(meme)
-        
-        
-    }
-
-    
     func sendEntireMeme(setMeme : MemeMeObject) {
         ImagePickerView.image = setMeme.image
         topText.text = setMeme.top
         bottomText.text = setMeme.bottom
-       
         
-}
+        
+    }
+
     
     override func viewWillLayoutSubviews() {
         if UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft || UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight {

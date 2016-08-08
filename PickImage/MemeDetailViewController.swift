@@ -20,7 +20,7 @@ class MemeDetailViewController : UIViewController {
        super.viewWillAppear(animated)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(MemeDetailViewController.edit))
         self.tabBarController?.tabBar.hidden =  false
-    memeImage.image = meme.image
+    memeImage.image = meme.memedImage
     
         
     }
@@ -38,4 +38,5 @@ class MemeDetailViewController : UIViewController {
     
     presentViewController(controller, animated: true, completion: nil)
     }
+    
 }

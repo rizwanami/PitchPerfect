@@ -11,7 +11,7 @@ struct MemeMeObject {
     var top : String!
     var bottom : String!
     var image : UIImage!
-    let memedImage :UIImage!
+    var memedImage :UIImage!
     
     func save() {
         // Add it to the memes array in the Application Delegate
