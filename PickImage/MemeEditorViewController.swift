@@ -46,7 +46,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         shareButton.enabled = false
        
         if memes != nil {
-            sendEntireMeme(memes)
+            sendEntireMeme()
         }
         
         
@@ -64,7 +64,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         keyboardDidDisapper()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         if memes != nil {
-            sendEntireMeme(memes)
+            sendEntireMeme()
         }
         
         
@@ -182,10 +182,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
          dismissViewControllerAnimated(true, completion: nil)
         
     }
-    func sendEntireMeme(setMeme : MemeMeObject) {
-        ImagePickerView.image = setMeme.image
-        topText.text = setMeme.top
-        bottomText.text = setMeme.bottom
+    func sendEntireMeme() {
+        ImagePickerView.image = memes.image
+        topText.text = memes.top
+        bottomText.text = memes.bottom
         
         
     }
