@@ -12,7 +12,7 @@ class MemeCollectionViewController : UICollectionViewController {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-   var memes = [MemeMeObject]()
+    var memes : [MemeMeObject]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +39,9 @@ class MemeCollectionViewController : UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionViewCell", forIndexPath: indexPath) as! MemeCollectionViewCell
         let item = memes[indexPath.row]
-        let imageView = UIImageView(image: item.memedImage)
-        cell.MemeCollectionImage = imageView
-        cell.backgroundView = imageView
+        
+        cell.MemeCollectionImage.image = item.memedImage
+        
         return cell
         
         
@@ -49,8 +49,7 @@ class MemeCollectionViewController : UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let controller = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         controller.meme = memes[indexPath.row]
-        let MemeInDetail = memes[indexPath.row]
-        controller.meme.image = MemeInDetail.memedImage
+        
     
         
         self.navigationController!.pushViewController(controller, animated: true)
